@@ -1,0 +1,248 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine for Trisha 💙</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:white;
+  color:#87CEEB;
+  overflow-x:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  text-align:center;
+}
+#container{
+  width:100%;
+  max-width:400px;
+  padding:20px;
+  position:relative;
+}
+
+/* subtle floating hearts background */
+body::before{
+  content:'💙';
+  position:fixed;
+  top:0;left:0;width:100%;height:100%;
+  font-size:3rem;
+  color:rgba(135,206,235,0.05);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  z-index:-1;
+}
+
+img.character, img.photo{
+  width:70%;
+  max-width:250px;
+  border-radius:20px;
+  margin-bottom:20px;
+  animation:float 3s ease-in-out infinite;
+}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;
+  margin-bottom:10px;
+  animation:fade 1.5s ease;
+  text-align:center;
+}
+p{
+  font-size:1rem;
+  opacity:0.9;
+  margin-bottom:20px;
+}
+button{
+  padding:12px 26px;
+  border:none;
+  border-radius:30px;
+  font-size:1rem;
+  font-weight:bold;
+  background:#87CEEB;
+  color:white;
+  margin:10px;
+  transition:0.3s;
+}
+button:active{transform:scale(0.95);}
+
+#end{
+  display:none;
+  flex-direction:column;
+  align-items:center;
+}
+.heart{
+  font-size:3rem;
+  animation:pulse 1.2s infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.3);}
+  100%{transform:scale(1);}
+}
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+.slide{display:none; flex-direction:column; align-items:center; justify-content:center;}
+.slide.active{display:flex;}
+h1.romantic{font-size:2rem; animation:fade 1.5s ease; margin:15px 0;}
+h1.letter{
+  font-family:'Great Vibes', cursive;
+  font-size:1.3rem;
+  line-height:1.6;
+  color:#333;
+  background:url('letter_bg.jpg') no-repeat center center;
+  background-size:cover;
+  padding:40px 20px;
+  border-radius:15px;
+  text-align:left;
+}
+</style>
+</head>
+<body>
+
+<div id="container">
+
+<!-- Intro Slide -->
+<div class="slide active" id="slide0">
+<img class="character" src="intro_gif.gif" alt="Intro GIF">
+<h1 class="romantic">Trisha, every heartbeat whispers your name. Our story began the moment our eyes met, and I knew my world would never be the same 💙</h1>
+<button onclick="nextSlide()">Want to see more 💙</button>
+</div>
+
+<!-- Photo Slide 1 -->
+<div class="slide" id="slide1">
+<img class="photo" src="photo1.jpg" alt="Photo 1">
+<h1 class="romantic">Trisha, your laughter is the melody that turns my darkest days into the brightest symphony. Every smile of yours is a universe I never want to leave 💙</h1>
+<button onclick="nextSlide()">Want to see more 💙</button>
+</div>
+
+<!-- Photo Slide 2 -->
+<div class="slide" id="slide2">
+<img class="photo" src="photo2.jpg" alt="Photo 2">
+<h1 class="romantic">Every second with you feels like a timeless dream, Trisha. Your touch, your voice, your presence—everything about you completes the rhythm of my life 💙</h1>
+<button onclick="nextSlide()">Want to see more 💙</button>
+</div>
+
+<!-- Photo Slide 3 -->
+<div class="slide" id="slide3">
+<img class="photo" src="photo3.jpg" alt="Photo 3">
+<h1 class="romantic">Trisha, you are my dawn and my dusk, my calm in the storm, my joy in every sorrow. My world is brighter because of you 💙</h1>
+<button onclick="nextSlide()">See my letter 💙</button>
+</div>
+
+<!-- Letter Slide -->
+<div class="slide" id="slide4">
+<h1 class="letter">
+My Dearest Trisha,<br><br>
+Every heartbeat of mine is a reflection of my love for you. From the first smile you gifted me to the countless moments we share, I am endlessly grateful for your presence. I promise to hold your hand through every storm, cherish every sunrise with you, and fill our days with laughter, warmth, and infinite love. You are my everything, and I vow to love you beyond time and space 💙
+</h1>
+<button onclick="nextSlide()">Next 💙</button>
+</div>
+
+<!-- QST Slides -->
+<div class="slide" id="slide5">
+<img class="character" src="qst1.gif" alt="QST1 GIF" style="width:150px;">
+<h1>Can I have you physically and mentally?</h1>
+<p>No bolle mon kharap korbo 🥺</p>
+<button onclick="nextQST()">Yes 💙</button>
+<button onclick="nextQST()">No ❌</button>
+</div>
+
+<div class="slide" id="slide6">
+<img class="character" src="qst2.gif" alt="QST2 GIF" style="width:150px;">
+<h1>Will you be my forever?<br><span style="font-size:0.9rem;">You are only mine 💙</span></h1>
+<button onclick="nextQST()">Yes 💙</button>
+<button onclick="nextQST()">No ❌</button>
+</div>
+
+<div class="slide" id="slide7">
+<img class="character" src="qst3.gif" alt="QST3 GIF" style="width:150px;">
+<h1>Will you be my Valentine?</h1>
+<button onclick="showEnd()">Yes 💙</button>
+<button id="noFinalBtn">No ❌</button>
+</div>
+
+<!-- Ending Slide -->
+<div id="end">
+<img class="character" src="photo.jpg"alt="Ending Photo" style="width:200px; margin-bottom:20px;">
+<h1>She Said YES 💙</h1>
+<div class="heart">💙💙💙</div>
+<p>Trisha, you are my today, my tomorrow, and all my forever.<br>Happy Valentine’s Day 💙</p>
+</div>
+
+</div>
+
+<script>
+let currentSlide = 0;
+function nextSlide(){
+  document.getElementsByClassName("slide")[currentSlide].classList.remove("active");
+  currentSlide++;
+  document.getElementsByClassName("slide")[currentSlide].classList.add("active");
+}
+
+// Final QST logic
+let qstStep = 5;
+function nextQST(){
+  document.getElementsByClassName("slide")[qstStep].classList.remove("active");
+  qstStep++;
+  document.getElementsByClassName("slide")[qstStep].classList.add("active");
+}
+
+// Final No button escape
+const noFinalBtn = document.getElementById("noFinalBtn");
+noFinalBtn.addEventListener("mouseover", ()=>{
+  const x = Math.random()*150 - 75;
+  const y = Math.random()*150 - 75;
+  noFinalBtn.style.transform = `translate(${x}px,${y}px)`;
+});
+noFinalBtn.addEventListener("touchstart", ()=>{
+  const x = Math.random()*150 - 75;
+  const y = Math.random()*150 - 75;
+  noFinalBtn.style.transform = `translate(${x}px,${y}px)`;
+});
+
+// Show End
+function showEnd(){
+  document.getElementsByClassName("slide")[7].classList.remove("active");
+  document.getElementById("end").style.display="flex";
+}
+</script>
+
+</body>
+</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p>Nothing to see here...</p>
+  <!-- Project -->
+  <script src="main.js"></script>
+</body>
+</html>
